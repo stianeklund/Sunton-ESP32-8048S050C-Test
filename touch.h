@@ -28,7 +28,7 @@ void touch_init() {
 
 bool touch_has_signal() {}
 
-bool touch_touched() {
+bool touch_touched(Arduino_RPi_DPI_RGBPanel *gfx) {
   ts.read();
   if (ts.isTouched) {
 #if defined(TOUCH_SWAP_XY)
