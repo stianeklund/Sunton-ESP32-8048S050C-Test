@@ -1,9 +1,5 @@
-#include <Arduino_GFX_Library.h>
 #include "touch.h"
 #include "lcd_definitions.h"
-#if defined(DISPLAY_DEV_KIT)
-Arduino_GFX *gfx = create_default_Arduino_GFX();
-#else  // !defined(DISPLAY_DEV_KIT)
 
 Arduino_ESP32RGBPanel *bus = new Arduino_ESP32RGBPanel(
   // These are not in use as the interface is parallel not i2c
@@ -20,8 +16,6 @@ Arduino_RPi_DPI_RGBPanel *gfx = new Arduino_RPi_DPI_RGBPanel(
   HSYNC_BACK_PORCH, HEIGHT, VSYNC_POLARITY, VSYNC_FRONT_PORCH,
   VSYNC_PULSE_WIDTH, VSYNC_BACK_PORCH, PCLK_ACTIVE_NEG, PREFER_SPEED,
   AUTO_FLUSH);
-
-#endif /* !defined(DISPLAY_DEV_KIT) */
 
 void setup(void) {
   gfx->begin();

@@ -6,7 +6,6 @@
 // Backlight pin
 #define TFT_BL 2
 
-
 // Bus definitions
 #define DE 40
 #define VSYNC 41
